@@ -221,6 +221,12 @@
 		CC9B9A4216C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3B16C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp */; };
 		CC9B9A4316C9EE8700E067C1 /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3D16C9EE8700E067C1 /* SneakyJoystick.cpp */; };
 		CC9B9A4416C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3F16C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp */; };
+		CC9B9A4C16C9F41E00E067C1 /* dpadDown.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4616C9F41E00E067C1 /* dpadDown.png */; };
+		CC9B9A4D16C9F41E00E067C1 /* handDown.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4716C9F41E00E067C1 /* handDown.png */; };
+		CC9B9A4E16C9F41E00E067C1 /* handUp.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4816C9F41E00E067C1 /* handUp.png */; };
+		CC9B9A4F16C9F41E00E067C1 /* joystickDown.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4916C9F41E00E067C1 /* joystickDown.png */; };
+		CC9B9A5016C9F41E00E067C1 /* jumpDown.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4A16C9F41E00E067C1 /* jumpDown.png */; };
+		CC9B9A5116C9F41E00E067C1 /* jumpUp.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4B16C9F41E00E067C1 /* jumpUp.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -694,6 +700,12 @@
 		CC9B9A3E16C9EE8700E067C1 /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
 		CC9B9A3F16C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystickSkinnedBase.cpp; sourceTree = "<group>"; };
 		CC9B9A4016C9EE8700E067C1 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
+		CC9B9A4616C9F41E00E067C1 /* dpadDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpadDown.png; sourceTree = "<group>"; };
+		CC9B9A4716C9F41E00E067C1 /* handDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handDown.png; sourceTree = "<group>"; };
+		CC9B9A4816C9F41E00E067C1 /* handUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = handUp.png; sourceTree = "<group>"; };
+		CC9B9A4916C9F41E00E067C1 /* joystickDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystickDown.png; sourceTree = "<group>"; };
+		CC9B9A4A16C9F41E00E067C1 /* jumpDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpDown.png; sourceTree = "<group>"; };
+		CC9B9A4B16C9F41E00E067C1 /* jumpUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpUp.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -764,6 +776,7 @@
 		CC20056E16C7518F009E3E7C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CC9B9A4516C9F41E00E067C1 /* joystick */,
 				CC52417A16C898FB0089ADE3 /* images */,
 				CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */,
 				CC20057316C7518F009E3E7C /* Default.png */,
@@ -1682,6 +1695,20 @@
 			path = libs/SneakyInput;
 			sourceTree = "<group>";
 		};
+		CC9B9A4516C9F41E00E067C1 /* joystick */ = {
+			isa = PBXGroup;
+			children = (
+				CC9B9A4616C9F41E00E067C1 /* dpadDown.png */,
+				CC9B9A4716C9F41E00E067C1 /* handDown.png */,
+				CC9B9A4816C9F41E00E067C1 /* handUp.png */,
+				CC9B9A4916C9F41E00E067C1 /* joystickDown.png */,
+				CC9B9A4A16C9F41E00E067C1 /* jumpDown.png */,
+				CC9B9A4B16C9F41E00E067C1 /* jumpUp.png */,
+			);
+			name = joystick;
+			path = Resources/joystick;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1747,6 +1774,12 @@
 				CC20082616C75192009E3E7C /* cocos2dx-ext_public.defines.txt in Resources */,
 				CC52417B16C898FB0089ADE3 /* images in Resources */,
 				CC9B9A3416C9E83B00E067C1 /* sv_anim_1.png in Resources */,
+				CC9B9A4C16C9F41E00E067C1 /* dpadDown.png in Resources */,
+				CC9B9A4D16C9F41E00E067C1 /* handDown.png in Resources */,
+				CC9B9A4E16C9F41E00E067C1 /* handUp.png in Resources */,
+				CC9B9A4F16C9F41E00E067C1 /* joystickDown.png in Resources */,
+				CC9B9A5016C9F41E00E067C1 /* jumpDown.png in Resources */,
+				CC9B9A5116C9F41E00E067C1 /* jumpUp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
