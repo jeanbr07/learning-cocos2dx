@@ -217,6 +217,10 @@
 		CC9B9A3216C9E6B800E067C1 /* GameplayLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */; };
 		CC9B9A3416C9E83B00E067C1 /* sv_anim_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */; };
 		CC9B9A3716C9E8B800E067C1 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */; };
+		CC9B9A4116C9EE8700E067C1 /* SneakyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3916C9EE8700E067C1 /* SneakyButton.cpp */; };
+		CC9B9A4216C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3B16C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp */; };
+		CC9B9A4316C9EE8700E067C1 /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3D16C9EE8700E067C1 /* SneakyJoystick.cpp */; };
+		CC9B9A4416C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3F16C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -682,6 +686,14 @@
 		CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sv_anim_1.png; path = Resources/sv_anim_1.png; sourceTree = "<group>"; };
 		CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
 		CC9B9A3616C9E8B800E067C1 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
+		CC9B9A3916C9EE8700E067C1 /* SneakyButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyButton.cpp; sourceTree = "<group>"; };
+		CC9B9A3A16C9EE8700E067C1 /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButton.h; sourceTree = "<group>"; };
+		CC9B9A3B16C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyButtonSkinnedBase.cpp; sourceTree = "<group>"; };
+		CC9B9A3C16C9EE8700E067C1 /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		CC9B9A3D16C9EE8700E067C1 /* SneakyJoystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystick.cpp; sourceTree = "<group>"; };
+		CC9B9A3E16C9EE8700E067C1 /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
+		CC9B9A3F16C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystickSkinnedBase.cpp; sourceTree = "<group>"; };
+		CC9B9A4016C9EE8700E067C1 /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -783,6 +795,7 @@
 		CC20058F16C7518F009E3E7C /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				CC9B9A3816C9EE8700E067C1 /* SneakyInput */,
 				CC20059016C7518F009E3E7C /* cocos2dx */,
 				CC20076916C75191009E3E7C /* CocosDenshion */,
 				CC20077D16C75191009E3E7C /* extensions */,
@@ -1653,6 +1666,22 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		CC9B9A3816C9EE8700E067C1 /* SneakyInput */ = {
+			isa = PBXGroup;
+			children = (
+				CC9B9A3916C9EE8700E067C1 /* SneakyButton.cpp */,
+				CC9B9A3A16C9EE8700E067C1 /* SneakyButton.h */,
+				CC9B9A3B16C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp */,
+				CC9B9A3C16C9EE8700E067C1 /* SneakyButtonSkinnedBase.h */,
+				CC9B9A3D16C9EE8700E067C1 /* SneakyJoystick.cpp */,
+				CC9B9A3E16C9EE8700E067C1 /* SneakyJoystick.h */,
+				CC9B9A3F16C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp */,
+				CC9B9A4016C9EE8700E067C1 /* SneakyJoystickSkinnedBase.h */,
+			);
+			name = SneakyInput;
+			path = libs/SneakyInput;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1914,6 +1943,10 @@
 				CC20083716C75750009E3E7C /* BackgroundLayer.cpp in Sources */,
 				CC9B9A3216C9E6B800E067C1 /* GameplayLayer.cpp in Sources */,
 				CC9B9A3716C9E8B800E067C1 /* GameScene.cpp in Sources */,
+				CC9B9A4116C9EE8700E067C1 /* SneakyButton.cpp in Sources */,
+				CC9B9A4216C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp in Sources */,
+				CC9B9A4316C9EE8700E067C1 /* SneakyJoystick.cpp in Sources */,
+				CC9B9A4416C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
