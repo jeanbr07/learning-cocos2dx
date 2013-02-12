@@ -38,16 +38,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     pEGLView->setDesignResolutionSize(1024, 768, kResolutionNoBorder);
     pDirector->setContentScaleFactor(1.0);
     searchPaths.push_back("ipad");
-  } else if (CCDirector::sharedDirector()->getWinSize().width <= 568) {
+  } else {
     pEGLView->setDesignResolutionSize(480, 320, kResolutionNoBorder);
     pDirector->setContentScaleFactor(1.0);
     searchPaths.push_back("iphone");
-  } else if (CCDirector::sharedDirector()->getWinSize().width <= 1136) {
-    pEGLView->setDesignResolutionSize(480, 320, kResolutionNoBorder);
-    pDirector->setContentScaleFactor(2.0);
-    searchPaths.push_back("iphone-hd");
-  } else {
-    assert(0);
   }
   CCFileUtils::sharedFileUtils()->setSearchResolutionsOrder(searchPaths);
 
