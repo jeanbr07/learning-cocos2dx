@@ -74,7 +74,30 @@ void GameplayLayer::initJoystickAndButtons()
   joystickBase->setJoystick(leftJoystick_);
   this->addChild(joystickBase);
 
-  // more
+  SneakyButtonSkinnedBase *jumpButtonBase = SneakyButtonSkinnedBase::create();
+  jumpButtonBase->setPosition(jumpButtonPosition);
+  jumpButtonBase->setDefaultSprite(CCSprite::create("jumpUp.png"));
+  jumpButtonBase->setActivatedSprite(CCSprite::create("jumpDown.png"));
+  jumpButtonBase->setPressSprite(CCSprite::create("jumpDown.png"));
+
+  jumpButton_ = new SneakyButton;
+  jumpButton_->initWithRect(jumpButtonDimensions);
+  jumpButton_->setIsToggleable(false);
+  jumpButtonBase->setButton(jumpButton_);
+  this->addChild(jumpButtonBase);
+
+  SneakyButtonSkinnedBase *attackButtonBase = SneakyButtonSkinnedBase::create();
+  attackButtonBase->setPosition(attackButtonPosition);
+  attackButtonBase->setDefaultSprite(CCSprite::create("handUp.png"));
+  attackButtonBase->setActivatedSprite(CCSprite::create("handDown.png"));
+  attackButtonBase->setPressSprite(CCSprite::create("handDown.png"));
+
+  attackButton_ = new SneakyButton;
+  attackButton_->initWithRect(attackButtonDimensions);
+  attackButton_->setIsToggleable(false);
+  attackButtonBase->setButton(attackButton_);
+  this->addChild(attackButtonBase);
+
 }
 
 void GameplayLayer::applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, float deltaTime)
@@ -84,14 +107,12 @@ void GameplayLayer::applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, flo
                             toNode->getPosition().y + scaledVelocity.y * deltaTime);
   toNode->setPosition(newPosition);
 
-  /*
   if (jumpButton_->getIsActive()) {
     CCLOG("Jump button is pressed!");
   }
   if (attackButton_->getIsActive()) {
-    CCLOG("Attach button is pressed!");
+    CCLOG("Attack button is pressed!");
   }
-  */
 }
 
 void GameplayLayer::update(float deltaTime)
