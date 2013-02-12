@@ -214,6 +214,9 @@
 		CC20082C16C75192009E3E7C /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC20082B16C75192009E3E7C /* AppDelegate.cpp */; };
 		CC20083716C75750009E3E7C /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC20083516C75750009E3E7C /* BackgroundLayer.cpp */; };
 		CC52417B16C898FB0089ADE3 /* images in Resources */ = {isa = PBXBuildFile; fileRef = CC52417A16C898FB0089ADE3 /* images */; };
+		CC9B9A3216C9E6B800E067C1 /* GameplayLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */; };
+		CC9B9A3416C9E83B00E067C1 /* sv_anim_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */; };
+		CC9B9A3716C9E8B800E067C1 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -674,6 +677,11 @@
 		CC20083516C75750009E3E7C /* BackgroundLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BackgroundLayer.cpp; path = Classes/BackgroundLayer.cpp; sourceTree = "<group>"; };
 		CC20083616C75750009E3E7C /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundLayer.h; path = Classes/BackgroundLayer.h; sourceTree = "<group>"; };
 		CC52417A16C898FB0089ADE3 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Resources/images; sourceTree = "<group>"; };
+		CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameplayLayer.cpp; path = Classes/GameplayLayer.cpp; sourceTree = "<group>"; };
+		CC9B9A3116C9E6B800E067C1 /* GameplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayLayer.h; path = Classes/GameplayLayer.h; sourceTree = "<group>"; };
+		CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sv_anim_1.png; path = Resources/sv_anim_1.png; sourceTree = "<group>"; };
+		CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
+		CC9B9A3616C9E8B800E067C1 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -745,6 +753,7 @@
 			isa = PBXGroup;
 			children = (
 				CC52417A16C898FB0089ADE3 /* images */,
+				CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */,
 				CC20057316C7518F009E3E7C /* Default.png */,
 				CC20057516C7518F009E3E7C /* HelloWorld.png */,
 				CC20057716C7518F009E3E7C /* Icon-72.png */,
@@ -1636,6 +1645,10 @@
 				CC20082B16C75192009E3E7C /* AppDelegate.cpp */,
 				CC20083616C75750009E3E7C /* BackgroundLayer.h */,
 				CC20083516C75750009E3E7C /* BackgroundLayer.cpp */,
+				CC9B9A3116C9E6B800E067C1 /* GameplayLayer.h */,
+				CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */,
+				CC9B9A3616C9E8B800E067C1 /* GameScene.h */,
+				CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1704,6 +1717,7 @@
 				CC20082416C75192009E3E7C /* cocos2dx-ext.mkf in Resources */,
 				CC20082616C75192009E3E7C /* cocos2dx-ext_public.defines.txt in Resources */,
 				CC52417B16C898FB0089ADE3 /* images in Resources */,
+				CC9B9A3416C9E83B00E067C1 /* sv_anim_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1898,6 +1912,8 @@
 				CC20082016C75192009E3E7C /* CCPhysicsSprite.cpp in Sources */,
 				CC20082C16C75192009E3E7C /* AppDelegate.cpp in Sources */,
 				CC20083716C75750009E3E7C /* BackgroundLayer.cpp in Sources */,
+				CC9B9A3216C9E6B800E067C1 /* GameplayLayer.cpp in Sources */,
+				CC9B9A3716C9E8B800E067C1 /* GameScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

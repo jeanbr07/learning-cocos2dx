@@ -10,16 +10,6 @@
 
 using namespace cocos2d;
 
-CCScene* BackgroundLayer::scene()
-{
-  CCScene *scene = CCScene::create();
-  BackgroundLayer *layer = BackgroundLayer::create();
-
-  scene->addChild(layer);
-
-  return scene;
-}
-
 bool BackgroundLayer::init()
 {
   if (!CCLayer::init()) {
@@ -30,7 +20,7 @@ bool BackgroundLayer::init()
 
   // we want the background right in the center
   CCSize size = CCDirector::sharedDirector()->getWinSize();
-  pSprite->setPosition( ccp(size.width/2, size.height/2) );
+  pSprite->setPosition(ccp(size.width/2, size.height/2));
 
   this->addChild(pSprite, 0);
 
