@@ -20,12 +20,12 @@ bool GameplayLayer::init()
 
   this->setTouchEnabled(true);
 
-  CCSize size = CCDirector::sharedDirector()->getWinSize();
+  screenSize_ = CCDirector::sharedDirector()->getWinSize();
   vikingSprite_ = CCSprite::create("sv_anim_1.png");
-  vikingSprite_->setPosition(ccp(size.width/2, size.height*0.17f));
+  vikingSprite_->setPosition(ccp(screenSize_.width/2, screenSize_.height*0.17f));
 
   // If NOT on the iPad, scale down
-  if (size.width == 480) {
+  if (screenSize_.width == 480) {
     // FIXME: this doesn't seem quite correct...
     vikingSprite_->setScaleX(480 / 1024.0f);
     vikingSprite_->setScaleY(320 / 768.0f);
@@ -41,7 +41,6 @@ bool GameplayLayer::init()
 
 void GameplayLayer::initJoystickAndButtons()
 {
-  CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
   CCRect joystickBaseDimensions = CCRectMake(0, 0, 128.0f, 128.0f);
   CCRect jumpButtonDimensions = CCRectMake(0, 0, 64.0f, 64.0f);
   CCRect attackButtonDimensions = CCRectMake(0, 0, 64.0f, 64.0f);
@@ -49,19 +48,19 @@ void GameplayLayer::initJoystickAndButtons()
   CCPoint joystickBasePosition, jumpButtonPosition, attackButtonPosition;
 
   if (CC_IS_IPAD()) {
-    joystickBasePosition = ccp(screenSize.width*0.0625f,
-                               screenSize.height*0.052f);
-    jumpButtonPosition = ccp(screenSize.width*0.946f,
-                             screenSize.height*0.052f);
-    attackButtonPosition = ccp(screenSize.width*0.947f,
-                               screenSize.height*0.169f);
+    joystickBasePosition = ccp(screenSize_.width*0.0625f,
+                               screenSize_.height*0.052f);
+    jumpButtonPosition = ccp(screenSize_.width*0.946f,
+                             screenSize_.height*0.052f);
+    attackButtonPosition = ccp(screenSize_.width*0.947f,
+                               screenSize_.height*0.169f);
   } else {
-    joystickBasePosition = ccp(screenSize.width*0.07f,
-                               screenSize.height*0.11f);
-    jumpButtonPosition = ccp(screenSize.width*0.93f,
-                             screenSize.height*0.11f);
-    attackButtonPosition = ccp(screenSize.width*0.93f,
-                               screenSize.height*0.35f);
+    joystickBasePosition = ccp(screenSize_.width*0.07f,
+                               screenSize_.height*0.11f);
+    jumpButtonPosition = ccp(screenSize_.width*0.93f,
+                             screenSize_.height*0.11f);
+    attackButtonPosition = ccp(screenSize_.width*0.93f,
+                               screenSize_.height*0.35f);
   }
 
   SneakyJoystickSkinnedBase *joystickBase = SneakyJoystickSkinnedBase::create();
@@ -100,11 +99,17 @@ void GameplayLayer::initJoystickAndButtons()
 
 }
 
+#define SET_BOUND_INSIDE(x, min, max) x = (x < min ? min : (x > max ? max : x))
+
 void GameplayLayer::applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, float deltaTime)
 {
-  CCPoint scaledVelocity = ccpMult(aJoystick->getVelocity(), 1024.0f);
+  CCPoint scaledVelocity = ccpMult(aJoystick->getVelocity(), screenSize_.width);
   CCPoint newPosition = ccp(toNode->getPosition().x + scaledVelocity.x * deltaTime,
                             toNode->getPosition().y + scaledVelocity.y * deltaTime);
+
+  SET_BOUND_INSIDE(newPosition.x, 0, screenSize_.width);
+  SET_BOUND_INSIDE(newPosition.y, 0, screenSize_.height);
+
   toNode->setPosition(newPosition);
 
   if (jumpButton_->getIsActive()) {

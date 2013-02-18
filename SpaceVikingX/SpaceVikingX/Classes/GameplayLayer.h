@@ -27,8 +27,10 @@ public:
 private:
   void initJoystickAndButtons();
   void applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, float deltaTime);
-  
+
   cocos2d::CCSprite *vikingSprite_;
+  cocos2d::CCSize screenSize_;
+
   SneakyJoystick *leftJoystick_;
   SneakyButton *jumpButton_;
   SneakyButton *attackButton_;
