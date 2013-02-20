@@ -23,12 +23,13 @@ bool GameplayLayer::init()
   screenSize_ = CCDirector::sharedDirector()->getWinSize();
 
   // Sprites! (book page 52)
+  CCSpriteFrameCache *spriteCache = CCSpriteFrameCache::sharedSpriteFrameCache();
   CCSpriteBatchNode *chapter2SpriteBatchNode;
   if (CC_IS_IPAD()) {
-    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("scene1atlas.plist");
+    spriteCache->addSpriteFramesWithFile("scene1atlas.plist", "scene1atlas.png");
     chapter2SpriteBatchNode = CCSpriteBatchNode::create("scene1atlas.png");
   } else {
-    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("scene1atlasiPhone.plist");
+    spriteCache->addSpriteFramesWithFile("scene1atlasiPhone.plist", "scene1atlasiPhone.png");
     chapter2SpriteBatchNode = CCSpriteBatchNode::create("scene1atlasiPhone.png");
   }
 
@@ -44,6 +45,18 @@ bool GameplayLayer::init()
     vikingSprite_->setScaleX(480 / 1024.0f);
     vikingSprite_->setScaleY(320 / 768.0f);
   }
+
+  CCAnimation *exampleAnim = CCAnimation::create();
+  exampleAnim->setRestoreOriginalFrame(false);
+  exampleAnim->setDelayPerUnit(0.16);
+  exampleAnim->addSpriteFrame(spriteCache->spriteFrameByName("sv_anim_2.png"));
+  exampleAnim->addSpriteFrame(spriteCache->spriteFrameByName("sv_anim_3.png"));
+  exampleAnim->addSpriteFrame(spriteCache->spriteFrameByName("sv_anim_4.png"));
+
+  CCAnimate *animateAction = CCAnimate::create(exampleAnim);
+  animateAction->setDuration(0.5);
+  CCRepeatForever *repeatAction = CCRepeatForever::create(animateAction);
+  vikingSprite_->runAction(repeatAction);
 
   this->initJoystickAndButtons();
   this->scheduleUpdate();
