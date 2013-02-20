@@ -21,7 +21,21 @@ bool GameplayLayer::init()
   this->setTouchEnabled(true);
 
   screenSize_ = CCDirector::sharedDirector()->getWinSize();
-  vikingSprite_ = CCSprite::create("sv_anim_1.png");
+
+  // Sprites! (book page 52)
+  CCSpriteBatchNode *chapter2SpriteBatchNode;
+  if (CC_IS_IPAD()) {
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("scene1atlas.plist");
+    chapter2SpriteBatchNode = CCSpriteBatchNode::create("scene1atlas.png");
+  } else {
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("scene1atlasiPhone.plist");
+    chapter2SpriteBatchNode = CCSpriteBatchNode::create("scene1atlasiPhone.png");
+  }
+
+  vikingSprite_ = CCSprite::createWithSpriteFrameName("sv_anim_1.png");
+  chapter2SpriteBatchNode->addChild(vikingSprite_);
+  this->addChild(chapter2SpriteBatchNode);
+  
   vikingSprite_->setPosition(ccp(screenSize_.width/2, screenSize_.height*0.17f));
 
   // If NOT on the iPad, scale down
@@ -30,8 +44,6 @@ bool GameplayLayer::init()
     vikingSprite_->setScaleX(480 / 1024.0f);
     vikingSprite_->setScaleY(320 / 768.0f);
   }
-
-  this->addChild(vikingSprite_, 0);
 
   this->initJoystickAndButtons();
   this->scheduleUpdate();
