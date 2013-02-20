@@ -215,7 +215,6 @@
 		CC20083716C75750009E3E7C /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC20083516C75750009E3E7C /* BackgroundLayer.cpp */; };
 		CC52417B16C898FB0089ADE3 /* images in Resources */ = {isa = PBXBuildFile; fileRef = CC52417A16C898FB0089ADE3 /* images */; };
 		CC9B9A3216C9E6B800E067C1 /* GameplayLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */; };
-		CC9B9A3416C9E83B00E067C1 /* sv_anim_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */; };
 		CC9B9A3716C9E8B800E067C1 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */; };
 		CC9B9A4116C9EE8700E067C1 /* SneakyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3916C9EE8700E067C1 /* SneakyButton.cpp */; };
 		CC9B9A4216C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3B16C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp */; };
@@ -231,6 +230,11 @@
 		CCEFD77316D482730015916E /* scene1atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD76F16D482730015916E /* scene1atlas.png */; };
 		CCEFD77816D4828E0015916E /* scene1atlasiPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD77616D4828E0015916E /* scene1atlasiPhone.plist */; };
 		CCEFD77916D4828E0015916E /* scene1atlasiPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD77716D4828E0015916E /* scene1atlasiPhone.png */; };
+		CCEFD78016D4922C0015916E /* EnemyRobot.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD77B16D4922C0015916E /* EnemyRobot.plist */; };
+		CCEFD78116D4922C0015916E /* Health.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD77C16D4922C0015916E /* Health.plist */; };
+		CCEFD78216D4922C0015916E /* Mallet.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD77D16D4922C0015916E /* Mallet.plist */; };
+		CCEFD78316D4922C0015916E /* RadarDish.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD77E16D4922C0015916E /* RadarDish.plist */; };
+		CCEFD78416D4922C0015916E /* Viking.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD77F16D4922C0015916E /* Viking.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -693,7 +697,6 @@
 		CC52417A16C898FB0089ADE3 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Resources/images; sourceTree = "<group>"; };
 		CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameplayLayer.cpp; path = Classes/GameplayLayer.cpp; sourceTree = "<group>"; };
 		CC9B9A3116C9E6B800E067C1 /* GameplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayLayer.h; path = Classes/GameplayLayer.h; sourceTree = "<group>"; };
-		CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sv_anim_1.png; path = Resources/sv_anim_1.png; sourceTree = "<group>"; };
 		CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = Classes/GameScene.cpp; sourceTree = "<group>"; };
 		CC9B9A3616C9E8B800E067C1 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
 		CC9B9A3916C9EE8700E067C1 /* SneakyButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyButton.cpp; sourceTree = "<group>"; };
@@ -714,6 +717,11 @@
 		CCEFD76F16D482730015916E /* scene1atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scene1atlas.png; path = Resources/scene1atlas.png; sourceTree = "<group>"; };
 		CCEFD77616D4828E0015916E /* scene1atlasiPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = scene1atlasiPhone.plist; path = Resources/scene1atlasiPhone.plist; sourceTree = "<group>"; };
 		CCEFD77716D4828E0015916E /* scene1atlasiPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scene1atlasiPhone.png; path = Resources/scene1atlasiPhone.png; sourceTree = "<group>"; };
+		CCEFD77B16D4922C0015916E /* EnemyRobot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EnemyRobot.plist; sourceTree = "<group>"; };
+		CCEFD77C16D4922C0015916E /* Health.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Health.plist; sourceTree = "<group>"; };
+		CCEFD77D16D4922C0015916E /* Mallet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mallet.plist; sourceTree = "<group>"; };
+		CCEFD77E16D4922C0015916E /* RadarDish.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RadarDish.plist; sourceTree = "<group>"; };
+		CCEFD77F16D4922C0015916E /* Viking.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Viking.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -772,6 +780,7 @@
 		CC20056D16C7518F009E3E7C /* SpaceVikingX */ = {
 			isa = PBXGroup;
 			children = (
+				CCEFD77A16D4922C0015916E /* plists */,
 				CC20056E16C7518F009E3E7C /* Resources */,
 				CC20058616C7518F009E3E7C /* ios */,
 				CC20058F16C7518F009E3E7C /* libs */,
@@ -786,7 +795,6 @@
 			children = (
 				CC9B9A4516C9F41E00E067C1 /* joystick */,
 				CC52417A16C898FB0089ADE3 /* images */,
-				CC9B9A3316C9E83B00E067C1 /* sv_anim_1.png */,
 				CCEFD76E16D482730015916E /* scene1atlas.plist */,
 				CCEFD76F16D482730015916E /* scene1atlas.png */,
 				CCEFD77616D4828E0015916E /* scene1atlasiPhone.plist */,
@@ -1721,6 +1729,18 @@
 			path = Resources/joystick;
 			sourceTree = "<group>";
 		};
+		CCEFD77A16D4922C0015916E /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				CCEFD77B16D4922C0015916E /* EnemyRobot.plist */,
+				CCEFD77C16D4922C0015916E /* Health.plist */,
+				CCEFD77D16D4922C0015916E /* Mallet.plist */,
+				CCEFD77E16D4922C0015916E /* RadarDish.plist */,
+				CCEFD77F16D4922C0015916E /* Viking.plist */,
+			);
+			path = plists;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1785,7 +1805,6 @@
 				CC20082416C75192009E3E7C /* cocos2dx-ext.mkf in Resources */,
 				CC20082616C75192009E3E7C /* cocos2dx-ext_public.defines.txt in Resources */,
 				CC52417B16C898FB0089ADE3 /* images in Resources */,
-				CC9B9A3416C9E83B00E067C1 /* sv_anim_1.png in Resources */,
 				CC9B9A4C16C9F41E00E067C1 /* dpadDown.png in Resources */,
 				CC9B9A4D16C9F41E00E067C1 /* handDown.png in Resources */,
 				CC9B9A4E16C9F41E00E067C1 /* handUp.png in Resources */,
@@ -1796,6 +1815,11 @@
 				CCEFD77316D482730015916E /* scene1atlas.png in Resources */,
 				CCEFD77816D4828E0015916E /* scene1atlasiPhone.plist in Resources */,
 				CCEFD77916D4828E0015916E /* scene1atlasiPhone.png in Resources */,
+				CCEFD78016D4922C0015916E /* EnemyRobot.plist in Resources */,
+				CCEFD78116D4922C0015916E /* Health.plist in Resources */,
+				CCEFD78216D4922C0015916E /* Mallet.plist in Resources */,
+				CCEFD78316D4922C0015916E /* RadarDish.plist in Resources */,
+				CCEFD78416D4922C0015916E /* Viking.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

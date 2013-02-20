@@ -46,18 +46,6 @@ bool GameplayLayer::init()
     vikingSprite_->setScaleY(320 / 768.0f);
   }
 
-  CCAnimation *exampleAnim = CCAnimation::create();
-  exampleAnim->setRestoreOriginalFrame(false);
-  exampleAnim->setDelayPerUnit(0.16);
-  exampleAnim->addSpriteFrame(spriteCache->spriteFrameByName("sv_anim_2.png"));
-  exampleAnim->addSpriteFrame(spriteCache->spriteFrameByName("sv_anim_3.png"));
-  exampleAnim->addSpriteFrame(spriteCache->spriteFrameByName("sv_anim_4.png"));
-
-  CCAnimate *animateAction = CCAnimate::create(exampleAnim);
-  animateAction->setDuration(0.5);
-  CCRepeatForever *repeatAction = CCRepeatForever::create(animateAction);
-  vikingSprite_->runAction(repeatAction);
-
   this->initJoystickAndButtons();
   this->scheduleUpdate();
 
