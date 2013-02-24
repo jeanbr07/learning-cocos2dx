@@ -213,6 +213,7 @@
 		CC20082616C75192009E3E7C /* cocos2dx-ext_public.defines.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC20082516C75192009E3E7C /* cocos2dx-ext_public.defines.txt */; };
 		CC20082C16C75192009E3E7C /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC20082B16C75192009E3E7C /* AppDelegate.cpp */; };
 		CC20083716C75750009E3E7C /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC20083516C75750009E3E7C /* BackgroundLayer.cpp */; };
+		CC3ADD8616DAC78F00E68068 /* GameCharacter.cc in Sources */ = {isa = PBXBuildFile; fileRef = CC3ADD8416DAC78F00E68068 /* GameCharacter.cc */; };
 		CC4714C216DA86ED004EA3E9 /* GameObject.cc in Sources */ = {isa = PBXBuildFile; fileRef = CC4714C016DA86ED004EA3E9 /* GameObject.cc */; };
 		CC52417B16C898FB0089ADE3 /* images in Resources */ = {isa = PBXBuildFile; fileRef = CC52417A16C898FB0089ADE3 /* images */; };
 		CC9B9A3216C9E6B800E067C1 /* GameplayLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */; };
@@ -695,6 +696,8 @@
 		CC20082B16C75192009E3E7C /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		CC20083516C75750009E3E7C /* BackgroundLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BackgroundLayer.cpp; path = Classes/BackgroundLayer.cpp; sourceTree = "<group>"; };
 		CC20083616C75750009E3E7C /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundLayer.h; path = Classes/BackgroundLayer.h; sourceTree = "<group>"; };
+		CC3ADD8416DAC78F00E68068 /* GameCharacter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameCharacter.cc; path = Classes/GameCharacter.cc; sourceTree = "<group>"; };
+		CC3ADD8516DAC78F00E68068 /* GameCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameCharacter.h; path = Classes/GameCharacter.h; sourceTree = "<group>"; };
 		CC4714BE16DA83AD004EA3E9 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
 		CC4714BF16DA8408004EA3E9 /* CommonProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonProtocols.h; path = Classes/CommonProtocols.h; sourceTree = "<group>"; };
 		CC4714C016DA86ED004EA3E9 /* GameObject.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cc; path = Classes/GameObject.cc; sourceTree = "<group>"; };
@@ -1737,6 +1740,8 @@
 			children = (
 				CC4714C016DA86ED004EA3E9 /* GameObject.cc */,
 				CC4714C116DA86ED004EA3E9 /* GameObject.h */,
+				CC3ADD8416DAC78F00E68068 /* GameCharacter.cc */,
+				CC3ADD8516DAC78F00E68068 /* GameCharacter.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -2086,6 +2091,7 @@
 				CC9B9A4316C9EE8700E067C1 /* SneakyJoystick.cpp in Sources */,
 				CC9B9A4416C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp in Sources */,
 				CC4714C216DA86ED004EA3E9 /* GameObject.cc in Sources */,
+				CC3ADD8616DAC78F00E68068 /* GameCharacter.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
