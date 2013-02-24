@@ -213,6 +213,7 @@
 		CC20082616C75192009E3E7C /* cocos2dx-ext_public.defines.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC20082516C75192009E3E7C /* cocos2dx-ext_public.defines.txt */; };
 		CC20082C16C75192009E3E7C /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC20082B16C75192009E3E7C /* AppDelegate.cpp */; };
 		CC20083716C75750009E3E7C /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC20083516C75750009E3E7C /* BackgroundLayer.cpp */; };
+		CC4714C216DA86ED004EA3E9 /* GameObject.cc in Sources */ = {isa = PBXBuildFile; fileRef = CC4714C016DA86ED004EA3E9 /* GameObject.cc */; };
 		CC52417B16C898FB0089ADE3 /* images in Resources */ = {isa = PBXBuildFile; fileRef = CC52417A16C898FB0089ADE3 /* images */; };
 		CC9B9A3216C9E6B800E067C1 /* GameplayLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */; };
 		CC9B9A3716C9E8B800E067C1 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */; };
@@ -694,6 +695,10 @@
 		CC20082B16C75192009E3E7C /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		CC20083516C75750009E3E7C /* BackgroundLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BackgroundLayer.cpp; path = Classes/BackgroundLayer.cpp; sourceTree = "<group>"; };
 		CC20083616C75750009E3E7C /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundLayer.h; path = Classes/BackgroundLayer.h; sourceTree = "<group>"; };
+		CC4714BE16DA83AD004EA3E9 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
+		CC4714BF16DA8408004EA3E9 /* CommonProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CommonProtocols.h; path = Classes/CommonProtocols.h; sourceTree = "<group>"; };
+		CC4714C016DA86ED004EA3E9 /* GameObject.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cc; path = Classes/GameObject.cc; sourceTree = "<group>"; };
+		CC4714C116DA86ED004EA3E9 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObject.h; path = Classes/GameObject.h; sourceTree = "<group>"; };
 		CC52417A16C898FB0089ADE3 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Resources/images; sourceTree = "<group>"; };
 		CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameplayLayer.cpp; path = Classes/GameplayLayer.cpp; sourceTree = "<group>"; };
 		CC9B9A3116C9E6B800E067C1 /* GameplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayLayer.h; path = Classes/GameplayLayer.h; sourceTree = "<group>"; };
@@ -1687,16 +1692,76 @@
 		CC20082916C75192009E3E7C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CC20082A16C75192009E3E7C /* AppDelegate.h */,
-				CC20082B16C75192009E3E7C /* AppDelegate.cpp */,
+				CC4714B716DA8339004EA3E9 /* Constants */,
+				CC4714BB16DA835A004EA3E9 /* EnemyObjects */,
+				CC4714BA16DA8357004EA3E9 /* GameObjects */,
+				CC4714B916DA8352004EA3E9 /* Layers */,
+				CC4714BC16DA8360004EA3E9 /* PowerUps */,
+				CC4714B816DA8349004EA3E9 /* Scenes */,
+				CC4714BD16DA8364004EA3E9 /* Singletons */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		CC4714B716DA8339004EA3E9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CC4714BE16DA83AD004EA3E9 /* Constants.h */,
+				CC4714BF16DA8408004EA3E9 /* CommonProtocols.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		CC4714B816DA8349004EA3E9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CC9B9A3616C9E8B800E067C1 /* GameScene.h */,
+				CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		CC4714B916DA8352004EA3E9 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
 				CC20083616C75750009E3E7C /* BackgroundLayer.h */,
 				CC20083516C75750009E3E7C /* BackgroundLayer.cpp */,
 				CC9B9A3116C9E6B800E067C1 /* GameplayLayer.h */,
 				CC9B9A3016C9E6B800E067C1 /* GameplayLayer.cpp */,
-				CC9B9A3616C9E8B800E067C1 /* GameScene.h */,
-				CC9B9A3516C9E8B800E067C1 /* GameScene.cpp */,
 			);
-			name = Classes;
+			name = Layers;
+			sourceTree = "<group>";
+		};
+		CC4714BA16DA8357004EA3E9 /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				CC4714C016DA86ED004EA3E9 /* GameObject.cc */,
+				CC4714C116DA86ED004EA3E9 /* GameObject.h */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
+		CC4714BB16DA835A004EA3E9 /* EnemyObjects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EnemyObjects;
+			sourceTree = "<group>";
+		};
+		CC4714BC16DA8360004EA3E9 /* PowerUps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PowerUps;
+			sourceTree = "<group>";
+		};
+		CC4714BD16DA8364004EA3E9 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				CC20082A16C75192009E3E7C /* AppDelegate.h */,
+				CC20082B16C75192009E3E7C /* AppDelegate.cpp */,
+			);
+			name = Singletons;
 			sourceTree = "<group>";
 		};
 		CC9B9A3816C9EE8700E067C1 /* SneakyInput */ = {
@@ -2020,6 +2085,7 @@
 				CC9B9A4216C9EE8700E067C1 /* SneakyButtonSkinnedBase.cpp in Sources */,
 				CC9B9A4316C9EE8700E067C1 /* SneakyJoystick.cpp in Sources */,
 				CC9B9A4416C9EE8700E067C1 /* SneakyJoystickSkinnedBase.cpp in Sources */,
+				CC4714C216DA86ED004EA3E9 /* GameObject.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2095,6 +2161,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SpaceVikingX/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
+					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+				);
 				INFOPLIST_FILE = SpaceVikingX/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -2119,6 +2194,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SpaceVikingX/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(PROJECT_NAME)/libs/cocos2dx/kazmath/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx\"",
+					"\"$(PROJECT_NAME)/libs/CocosDenshion/include\"",
+					"\"$(SDKROOT)/usr/include/libxml2\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/include\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/third_party/ios\"",
+					"\"$(PROJECT_NAME)/libs/cocos2dx/platform/ios\"",
+				);
 				INFOPLIST_FILE = SpaceVikingX/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
