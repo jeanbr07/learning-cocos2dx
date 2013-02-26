@@ -44,3 +44,11 @@ void GameCharacter::setCharacterState(CharacterStates newState) {
   this->characterState_ = newState;
 }
 
+int GameCharacter::getCharacterHealth() {
+  return this->characterHealth_;
+}
+
+void GameCharacter::setCharacterHealth(int newHealth) {
+  this->characterHealth_ = newHealth;
+}
+

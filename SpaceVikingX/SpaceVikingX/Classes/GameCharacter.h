@@ -24,6 +24,8 @@ public:
 
   CharacterStates getCharacterState();
   void setCharacterState(CharacterStates newState);
+  int getCharacterHealth();
+  void setCharacterHealth(int newHealth);
 };
 
 #endif /* defined(__SpaceVikingX__GameCharacter__) */
