@@ -35,3 +35,12 @@ void GameCharacter::checkAndClampSpritePosition() {
     }
   }
 }
+
+CharacterStates GameCharacter::getCharacterState() {
+  return this->characterState_;
+}
+
+void GameCharacter::setCharacterState(CharacterStates newState) {
+  this->characterState_ = newState;
+}
+

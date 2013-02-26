@@ -14,11 +14,16 @@
 #include "GameObject.h"
 
 class GameCharacter : public GameObject {
-  int characterHealth;
-  CharacterStates characterState;
+protected:
+  int characterHealth_;
+  CharacterStates characterState_;
 
+public:
   void checkAndClampSpritePosition();
   int getWeaponDamage();
+
+  CharacterStates getCharacterState();
+  void setCharacterState(CharacterStates newState);
 };
 
 #endif /* defined(__SpaceVikingX__GameCharacter__) */

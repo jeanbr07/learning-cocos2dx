@@ -24,7 +24,7 @@ public:
   cocos2d::CCRect adjustedBoundingBox();
   cocos2d::CCAnimation * loadPlistForAnimation(const char *animationName, const char *className);
   
-private:
+protected:
   bool isActive_;
   bool reactsToScreenBoundaries_;
   cocos2d::CCSize screenSize_;
