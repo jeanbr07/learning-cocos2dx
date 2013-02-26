@@ -20,7 +20,7 @@ public:
   virtual bool init();
   
   void changeState(CharacterStates newState);
-  void updateState(cocos2d::CCTime deltaTime, const cocos2d::CCArray& listOfGameObjects);
+  void updateState(float deltaTime, const cocos2d::CCArray& listOfGameObjects);
   cocos2d::CCRect adjustedBoundingBox();
   cocos2d::CCAnimation * loadPlistForAnimation(const char *animationName, const char *className);
   

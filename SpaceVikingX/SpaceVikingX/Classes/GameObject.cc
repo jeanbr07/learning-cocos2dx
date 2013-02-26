@@ -44,9 +44,9 @@ void GameObject::changeState(CharacterStates newState)
   CCLOG("GameObject->changeState method should be overridden");
 }
 
-void GameObject::updateState(cocos2d::CCTime deltaTime, const cocos2d::CCArray& listOfGameObjects)
+void GameObject::updateState(float deltaTime, const cocos2d::CCArray& listOfGameObjects)
 {
-  CCLOG("updateStateWithDeltaTime method should be overridden");
+  //CCLOG("updateStateWithDeltaTime method should be overridden");
 }
 
 cocos2d::CCRect GameObject::adjustedBoundingBox()
@@ -63,12 +63,12 @@ cocos2d::CCAnimation * GameObject::loadPlistForAnimation(const char *animationNa
   CCDictionary *plistDictionary = CCDictionary::createWithContentsOfFileThreadSafe(plistFile);
   CCDictionary *animationSettings = static_cast<CCDictionary *>(plistDictionary->objectForKey(animationName));
 
-  float animationDelay = static_cast<CCFloat *>(animationSettings->objectForKey("delay"))->getValue();
+  float animationDelay = animationSettings->valueForKey("delay")->floatValue();
   animationToReturn = CCAnimation::create();
   animationToReturn->setDelayPerUnit(animationDelay);
 
-  const char *animationFramePrefix = static_cast<CCString *>(animationSettings->objectForKey("filenamePrefix"))->getCString();
-  CCString *animationFrames = static_cast<CCString *>(animationSettings->objectForKey("animationFrames"));
+  const char *animationFramePrefix = animationSettings->valueForKey("filenamePrefix")->getCString();
+  const CCString *animationFrames = animationSettings->valueForKey("animationFrames");
   std::vector<std::string> animationFrameNumbers;
   str_split(animationFrames->m_sString, ",", animationFrameNumbers);
 
@@ -78,6 +78,6 @@ cocos2d::CCAnimation * GameObject::loadPlistForAnimation(const char *animationNa
     sprintf(frameName, "%s%s.png", animationFramePrefix, frameNumber);
     animationToReturn->addSpriteFrame(CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(frameName));
   }
-  
+
   return animationToReturn;
 }
