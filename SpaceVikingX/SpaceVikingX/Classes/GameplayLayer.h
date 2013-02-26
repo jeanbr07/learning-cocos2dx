@@ -16,6 +16,10 @@
 #include "SneakyButtonSkinnedBase.h"
 #include "SneakyJoystickSkinnedBase.h"
 
+#include "Constants.h"
+#include "CommonProtocols.h"
+#include "RadarDish.h"
+
 class GameplayLayer : public cocos2d::CCLayer
 {
 public:
@@ -27,9 +31,11 @@ public:
 private:
   void initJoystickAndButtons();
   void applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, float deltaTime);
-
+  void createObject(GameObjectType objectType, int initialHealth, cocos2d::CCPoint spawnLocation, int zValue);
+  void createPhaser(PhaserDirection phaserDirection, cocos2d::CCPoint spawnPosition);
   cocos2d::CCSprite *vikingSprite_;
   cocos2d::CCSize screenSize_;
+  cocos2d::CCSpriteBatchNode *sceneSpriteBatchNode_;
 
   SneakyJoystick *leftJoystick_;
   SneakyButton *jumpButton_;

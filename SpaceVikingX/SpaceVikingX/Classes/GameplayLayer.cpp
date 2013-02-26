@@ -24,18 +24,17 @@ bool GameplayLayer::init()
 
   // Sprites! (book page 52)
   CCSpriteFrameCache *spriteCache = CCSpriteFrameCache::sharedSpriteFrameCache();
-  CCSpriteBatchNode *chapter2SpriteBatchNode;
   if (CC_IS_IPAD()) {
     spriteCache->addSpriteFramesWithFile("scene1atlas.plist", "scene1atlas.png");
-    chapter2SpriteBatchNode = CCSpriteBatchNode::create("scene1atlas.png");
+    sceneSpriteBatchNode_ = CCSpriteBatchNode::create("scene1atlas.png");
   } else {
     spriteCache->addSpriteFramesWithFile("scene1atlasiPhone.plist", "scene1atlasiPhone.png");
-    chapter2SpriteBatchNode = CCSpriteBatchNode::create("scene1atlasiPhone.png");
+    sceneSpriteBatchNode_ = CCSpriteBatchNode::create("scene1atlasiPhone.png");
   }
 
   vikingSprite_ = CCSprite::createWithSpriteFrameName("sv_anim_1.png");
-  chapter2SpriteBatchNode->addChild(vikingSprite_);
-  this->addChild(chapter2SpriteBatchNode);
+  sceneSpriteBatchNode_->addChild(vikingSprite_);
+  this->addChild(sceneSpriteBatchNode_);
   
   vikingSprite_->setPosition(ccp(screenSize_.width/2, screenSize_.height*0.17f));
 
@@ -46,6 +45,8 @@ bool GameplayLayer::init()
     vikingSprite_->setScaleY(320 / 768.0f);
   }
 
+  this->createObject(kEnemyTypeRadarDish, 100, ccp(screenSize_.width * 0.878f, screenSize_.height * 0.13f), 10);
+  
   this->initJoystickAndButtons();
   this->scheduleUpdate();
 
@@ -112,6 +113,22 @@ void GameplayLayer::initJoystickAndButtons()
 
 }
 
+void GameplayLayer::createObject(GameObjectType objectType, int initialHealth, cocos2d::CCPoint spawnLocation, int zValue)
+{
+  if (objectType == kEnemyTypeRadarDish) {
+    CCLOG("Creating the Radar Enemy");
+    RadarDish *radarDish = RadarDish::create();
+    radarDish->setCharacterHealth(initialHealth);
+    radarDish->setPosition(spawnLocation);
+    sceneSpriteBatchNode_->addChild(radarDish, zValue, kRadarDishTagValue);
+  }
+}
+
+void GameplayLayer::createPhaser(PhaserDirection phaserDirection, CCPoint spawnPosition) {
+  CCLOG("Placeholder for Chapter 5, see below");
+  return;
+}
+
 #define SET_BOUND_INSIDE(x, min, max) x = (x < min ? min : (x > max ? max : x))
 
 void GameplayLayer::applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, float deltaTime)
@@ -135,6 +152,13 @@ void GameplayLayer::applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, flo
 
 void GameplayLayer::update(float deltaTime)
 {
+  CCArray *gameObjects = sceneSpriteBatchNode_->getChildren();
+
+  for (int i = 0; i < gameObjects->count(); i++) {
+    GameCharacter *tempChar = (GameCharacter *)gameObjects->objectAtIndex(i);
+    tempChar->updateState(deltaTime, *gameObjects);
+  }
+
   this->applyJoystick(leftJoystick_, vikingSprite_, deltaTime);
 }
 
