@@ -16,6 +16,8 @@ bool RadarDish::init()
     return false;
   }
 
+  CCSprite::initWithSpriteFrameName("radar_1.png");
+
   CCLOG("### RadarDish initialized");
   this->initAnimations();
   this->characterHealth_ = 100.0f;
@@ -32,7 +34,8 @@ void RadarDish::changeState(CharacterStates newState) {
   switch (newState) {
     case kStateSpawning: {
       CCLOG("RadarDish->Starting the Spawning Animation");
-      action = CCAnimate::create(tiltingAnim_);
+      CCAnimate *animateAction = CCAnimate::create(tiltingAnim_);
+      action = CCRepeatForever::create(animateAction);
       break;
     }
     case kStateIdle: {
@@ -66,7 +69,7 @@ void RadarDish::changeState(CharacterStates newState) {
   }
 }
 
-void RadarDish::updateState(cocos2d::CCTime deltaTime, const cocos2d::CCArray& listOfGameObjects)
+void RadarDish::updateState(float deltaTime, const cocos2d::CCArray& listOfGameObjects)
 {
   if (characterState_ == kStateDead) return;
 
@@ -91,6 +94,7 @@ void RadarDish::updateState(cocos2d::CCTime deltaTime, const cocos2d::CCArray& l
 void RadarDish::initAnimations()
 {
   this->tiltingAnim_ = this->loadPlistForAnimation("tiltingAnim", "RadarDish");
+  this->tiltingAnim_->setRestoreOriginalFrame(false);
   this->transmittingAnim_ = this->loadPlistForAnimation("transmittingAnim", "RadarDish");
   this->takingAHitAnim_ = this->loadPlistForAnimation("takingAHitAnim", "RadarDish");
   this->blowingUpAnim_ = this->loadPlistForAnimation("blowingUpAnim", "RadarDish");

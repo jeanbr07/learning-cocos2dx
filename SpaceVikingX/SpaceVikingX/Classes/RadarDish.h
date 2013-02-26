@@ -16,11 +16,12 @@
 class RadarDish : public GameCharacter {
 public:
   virtual bool init();
+  void changeState(CharacterStates newState);
+  CREATE_FUNC(RadarDish);
 
 protected:
   void initAnimations();
-  void changeState(CharacterStates newState);
-  void updateState(cocos2d::CCTime deltaTime, const cocos2d::CCArray& listOfGameObjects);
+  void updateState(float deltaTime, const cocos2d::CCArray& listOfGameObjects);
 
   cocos2d::CCAnimation *tiltingAnim_;
   cocos2d::CCAnimation *transmittingAnim_;
