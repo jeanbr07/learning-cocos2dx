@@ -229,6 +229,7 @@
 		CC9B9A4F16C9F41E00E067C1 /* joystickDown.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4916C9F41E00E067C1 /* joystickDown.png */; };
 		CC9B9A5016C9F41E00E067C1 /* jumpDown.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4A16C9F41E00E067C1 /* jumpDown.png */; };
 		CC9B9A5116C9F41E00E067C1 /* jumpUp.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B9A4B16C9F41E00E067C1 /* jumpUp.png */; };
+		CCE3989816DD7D9000182574 /* Viking.cc in Sources */ = {isa = PBXBuildFile; fileRef = CCE3989616DD7D9000182574 /* Viking.cc */; };
 		CCEFD77216D482730015916E /* scene1atlas.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD76E16D482730015916E /* scene1atlas.plist */; };
 		CCEFD77316D482730015916E /* scene1atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD76F16D482730015916E /* scene1atlas.png */; };
 		CCEFD77816D4828E0015916E /* scene1atlasiPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCEFD77616D4828E0015916E /* scene1atlasiPhone.plist */; };
@@ -724,6 +725,8 @@
 		CC9B9A4916C9F41E00E067C1 /* joystickDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystickDown.png; sourceTree = "<group>"; };
 		CC9B9A4A16C9F41E00E067C1 /* jumpDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpDown.png; sourceTree = "<group>"; };
 		CC9B9A4B16C9F41E00E067C1 /* jumpUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpUp.png; sourceTree = "<group>"; };
+		CCE3989616DD7D9000182574 /* Viking.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Viking.cc; path = Classes/Viking.cc; sourceTree = "<group>"; };
+		CCE3989716DD7D9000182574 /* Viking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Viking.h; path = Classes/Viking.h; sourceTree = "<group>"; };
 		CCEFD76E16D482730015916E /* scene1atlas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = scene1atlas.plist; path = Resources/scene1atlas.plist; sourceTree = "<group>"; };
 		CCEFD76F16D482730015916E /* scene1atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scene1atlas.png; path = Resources/scene1atlas.png; sourceTree = "<group>"; };
 		CCEFD77616D4828E0015916E /* scene1atlasiPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = scene1atlasiPhone.plist; path = Resources/scene1atlasiPhone.plist; sourceTree = "<group>"; };
@@ -1745,6 +1748,8 @@
 				CC4714C116DA86ED004EA3E9 /* GameObject.h */,
 				CC3ADD8416DAC78F00E68068 /* GameCharacter.cc */,
 				CC3ADD8516DAC78F00E68068 /* GameCharacter.h */,
+				CCE3989616DD7D9000182574 /* Viking.cc */,
+				CCE3989716DD7D9000182574 /* Viking.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -2098,6 +2103,7 @@
 				CC4714C216DA86ED004EA3E9 /* GameObject.cc in Sources */,
 				CC3ADD8616DAC78F00E68068 /* GameCharacter.cc in Sources */,
 				CC23F83516DD22D80044C629 /* RadarDish.cc in Sources */,
+				CCE3989816DD7D9000182574 /* Viking.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

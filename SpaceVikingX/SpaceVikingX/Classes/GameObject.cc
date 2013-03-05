@@ -51,7 +51,7 @@ void GameObject::updateState(float deltaTime, const cocos2d::CCArray& listOfGame
 
 cocos2d::CCRect GameObject::adjustedBoundingBox()
 {
-  CCLOG("GameObect adjustedBoundingBox should be overridden");
+  CCLOG("GameObject adjustedBoundingBox should be overridden");
   return this->boundingBox();
 }
 
