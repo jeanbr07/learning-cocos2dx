@@ -156,12 +156,24 @@ void Viking::changeState(CharacterStates newState)
       movementAction = CCJumpBy::create(0.5f, newPosition, 160.0f, 1);
 
       if (isCarryingMallet_) {
-        CCArray *spawnList = CCArray::create(CCAnimate::create(this->jumpingMalletAnim_), movementAction);
-        CCArray *actionList = CCArray::create(CCAnimate::create(this->crouchingMalletAnim_), spawnList, this->afterJumpingMalletAnim_);
+        CCArray *spawnList = CCArray::createWithCapacity(2);
+        spawnList->addObject(CCAnimate::create(jumpingMalletAnim_));
+        spawnList->addObject(movementAction);
+        CCSpawn *spawn = CCSpawn::create(spawnList);
+        CCArray *actionList = CCArray::createWithCapacity(3);
+        actionList->addObject(CCAnimate::create(crouchingMalletAnim_));
+        actionList->addObject(spawn);
+        actionList->addObject(CCAnimate::create(afterJumpingMalletAnim_));
         action = CCSequence::create(actionList);
       } else {
-        CCArray *spawnList = CCArray::create(CCAnimate::create(this->jumpingAnim_), movementAction);
-        CCArray *actionList = CCArray::create(CCAnimate::create(this->crouchingAnim_), spawnList, this->afterJumpingAnim_);
+        CCArray *spawnList = CCArray::createWithCapacity(2);
+        spawnList->addObject(CCAnimate::create(jumpingAnim_));
+        spawnList->addObject(movementAction);
+        CCSpawn *spawn = CCSpawn::create(spawnList);
+        CCArray *actionList = CCArray::createWithCapacity(3);
+        actionList->addObject(CCAnimate::create(crouchingAnim_));
+        actionList->addObject(spawn);
+        actionList->addObject(CCAnimate::create(afterJumpingAnim_));
         action = CCSequence::create(actionList);
       }
       break;

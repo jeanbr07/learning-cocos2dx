@@ -19,7 +19,7 @@ protected:
   CharacterStates characterState_;
 
 public:
-  void checkAndClampSpritePosition();
+  virtual void checkAndClampSpritePosition();
   int getWeaponDamage();
 
   CharacterStates getCharacterState();

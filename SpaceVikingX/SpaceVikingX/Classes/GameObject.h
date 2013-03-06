@@ -19,9 +19,9 @@ class GameObject : public cocos2d::CCSprite
 public:
   virtual bool init();
   
-  void changeState(CharacterStates newState);
+  virtual void changeState(CharacterStates newState);
   virtual void updateState(float deltaTime, cocos2d::CCArray *gameObjects);
-  cocos2d::CCRect adjustedBoundingBox();
+  virtual cocos2d::CCRect adjustedBoundingBox();
   cocos2d::CCAnimation * loadPlistForAnimation(const char *animationName, const char *className);
   
 protected:
