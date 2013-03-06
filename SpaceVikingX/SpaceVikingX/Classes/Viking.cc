@@ -10,6 +10,52 @@
 
 using namespace cocos2d;
 
+bool Viking::init()
+{
+  if (!GameObject::init()) {
+    return false;
+  }
+
+  CCSprite::initWithSpriteFrameName("sv_anim_1.png");
+  
+  this->joystick_ = NULL;
+  this->jumpButton_ = NULL;
+  this->attackButton_ = NULL;
+  this->gameObjectType_ = kVikingType;
+  this->myLastPunch_ = kRightHook;
+  this->millisecondsStayingIdle_ = 0.0;
+  this->isCarryingMallet_ = false;
+
+  this->initAnimations();
+
+  return true;
+}
+
+void Viking::initAnimations()
+{
+  this->setBreathingAnim(this->loadPlistForAnimation("breathingAnim", "Viking"));
+  this->setWalkingAnim(this->loadPlistForAnimation("walkingAnim", "Viking"));
+
+  this->setBreathingMalletAnim(this->loadPlistForAnimation("breathingMalletAnim", "Viking"));
+  this->setWalkingMalletAnim(this->loadPlistForAnimation("walkingMalletAnim", "Viking"));
+
+  this->setCrouchingAnim(this->loadPlistForAnimation("crouchingAnim", "Viking"));
+  this->setStandingUpAnim(this->loadPlistForAnimation("standingUpAnim", "Viking"));
+  this->setJumpingAnim(this->loadPlistForAnimation("jumpingAnim", "Viking"));
+  this->setAfterJumpingAnim(this->loadPlistForAnimation("afterJumpingAnim", "Viking"));
+
+  this->setCrouchingMalletAnim(this->loadPlistForAnimation("crouchingMalletAnim", "Viking"));
+  this->setStandingUpMalletAnim(this->loadPlistForAnimation("standingUpMalletAnim", "Viking"));
+  this->setJumpingMalletAnim(this->loadPlistForAnimation("jumpingMalletAnim", "Viking"));
+  this->setAfterJumpingMalletAnim(this->loadPlistForAnimation("afterJumpingMalletAnim", "Viking"));
+
+  this->setRightPunchAnim(this->loadPlistForAnimation("rightPunchAnim", "Viking"));
+  this->setLeftPunchAnim(this->loadPlistForAnimation("leftPunchAnim", "Viking"));
+  this->setMalletPunchAnim(this->loadPlistForAnimation("malletPunchAnim", "Viking"));
+  this->setPhaserShockAnim(this->loadPlistForAnimation("phaserShockAnim", "Viking"));
+  this->setDeathAnim(this->loadPlistForAnimation("vikingDeathAnim", "Viking"));
+}
+
 bool Viking::isCarryingWeapon()
 {
   return this->isCarryingMallet_;
@@ -72,17 +118,17 @@ void Viking::changeState(CharacterStates newState)
     }
     case kStateWalking: {
       if (isCarryingMallet_) {
-        action = CCAnimate::create(walkingMalletAnim_);
+        action = CCAnimate::create(this->walkingMalletAnim_);
       } else {
-        action = CCAnimate::create(walkingAnim_);
+        action = CCAnimate::create(this->walkingAnim_);
       }
       break;
     }
     case kStateCrouching: {
       if (isCarryingMallet_) {
-        action = CCAnimate::create(crouchingMalletAnim_);
+        action = CCAnimate::create(this->crouchingMalletAnim_);
       } else {
-        action = CCAnimate::create(crouchingAnim_);
+        action = CCAnimate::create(this->crouchingAnim_);
       }
       break;
     }
@@ -110,12 +156,12 @@ void Viking::changeState(CharacterStates newState)
       movementAction = CCJumpBy::create(0.5f, newPosition, 160.0f, 1);
 
       if (isCarryingMallet_) {
-        CCArray *spawnList = CCArray::create(CCAnimate::create(jumpingMalletAnim_), movementAction);
-        CCArray *actionList = CCArray::create(CCAnimate::create(crouchingMalletAnim_), spawnList, afterJumpingMalletAnim_);
+        CCArray *spawnList = CCArray::create(CCAnimate::create(this->jumpingMalletAnim_), movementAction);
+        CCArray *actionList = CCArray::create(CCAnimate::create(this->crouchingMalletAnim_), spawnList, this->afterJumpingMalletAnim_);
         action = CCSequence::create(actionList);
       } else {
-        CCArray *spawnList = CCArray::create(CCAnimate::create(jumpingAnim_), movementAction);
-        CCArray *actionList = CCArray::create(CCAnimate::create(crouchingAnim_), spawnList, afterJumpingAnim_);
+        CCArray *spawnList = CCArray::create(CCAnimate::create(this->jumpingAnim_), movementAction);
+        CCArray *actionList = CCArray::create(CCAnimate::create(this->crouchingAnim_), spawnList, this->afterJumpingAnim_);
         action = CCSequence::create(actionList);
       }
       break;
@@ -148,7 +194,7 @@ void Viking::changeState(CharacterStates newState)
     }
   }
 
-  if (!action) {
+  if (action) {
     this->runAction(action);
   }
 }
@@ -244,3 +290,28 @@ cocos2d::CCRect Viking::adjustedBoundingBox()
 
   return vikingBoundingBox;
 }
+
+SneakyJoystick * Viking::getJoystick() {
+  return this->joystick_;
+}
+
+void Viking::setJoystick(SneakyJoystick *aJoystick) {
+  this->joystick_ = aJoystick;
+}
+
+SneakyButton * Viking::getJumpButton() {
+  return this->jumpButton_;
+}
+
+void Viking::setJumpButton(SneakyButton *aButton) {
+  this->jumpButton_ = aButton;
+}
+
+SneakyButton * Viking::getAttackButton() {
+  return this->attackButton_;
+}
+
+void Viking::setAttackButton(SneakyButton *aButton) {
+  this->attackButton_ = aButton;
+}
+

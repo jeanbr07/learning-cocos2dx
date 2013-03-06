@@ -44,9 +44,9 @@ void GameObject::changeState(CharacterStates newState)
   CCLOG("GameObject->changeState method should be overridden");
 }
 
-void GameObject::updateState(float deltaTime, const cocos2d::CCArray& listOfGameObjects)
+void GameObject::updateState(float deltaTime, cocos2d::CCArray *gameObjects)
 {
-  //CCLOG("updateStateWithDeltaTime method should be overridden");
+  CCLOG("updateStateWithDeltaTime method should be overridden");
 }
 
 cocos2d::CCRect GameObject::adjustedBoundingBox()

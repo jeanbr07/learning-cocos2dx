@@ -24,6 +24,7 @@ class Viking : public GameCharacter {
 public:
   virtual bool init();
   CREATE_FUNC(Viking);
+  void initAnimations();
   cocos2d::CCRect adjustedBoundingBox();
 
   bool isCarryingWeapon();
@@ -33,35 +34,43 @@ public:
   void changeState(CharacterStates newState);
   void updateState(float deltaTime, cocos2d::CCArray *gameObjects);
 
+  SneakyJoystick * getJoystick();
+  void setJoystick(SneakyJoystick *aJoystick);
+  SneakyButton * getJumpButton();
+  void setJumpButton(SneakyButton *aButton);
+  SneakyButton * getAttackButton();
+  void setAttackButton(SneakyButton *aButton);
+
 protected:
   LastPunchType myLastPunch_;
   bool isCarryingMallet_;
   cocos2d::CCSpriteFrame *standingFrame_;
 
   // Standing, breathing, and walking
-  cocos2d::CCAnimation *breathingAnim_;
-  cocos2d::CCAnimation *breathingMalletAnim_;
-  cocos2d::CCAnimation *walkingAnim_;
-  cocos2d::CCAnimation *walkingMalletAnim_;
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, breathingAnim_, BreathingAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, breathingMalletAnim_, BreathingMalletAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, walkingAnim_, WalkingAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, walkingMalletAnim_, WalkingMalletAnim)
 
   // Crouching, standing up, and Jumping
-  cocos2d::CCAnimation *crouchingAnim_;
-  cocos2d::CCAnimation *crouchingMalletAnim_;
-  cocos2d::CCAnimation *standingUpAnim_;
-  cocos2d::CCAnimation *standingUpMalletAnim_;
-  cocos2d::CCAnimation *jumpingAnim_;
-  cocos2d::CCAnimation *jumpingMalletAnim_;
-  cocos2d::CCAnimation *afterJumpingAnim_;
-  cocos2d::CCAnimation *afterJumpingMalletAnim_;
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, crouchingAnim_, CrouchingAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, crouchingMalletAnim_, CrouchingMalletAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, standingUpAnim_, StandingUpAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, standingUpMalletAnim_, StandingUpMalletAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, jumpingAnim_, JumpingAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, jumpingMalletAnim_, JumpingMalletAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, afterJumpingAnim_, AfterJumpingAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, afterJumpingMalletAnim_, AfterJumpingMalletAnim)
 
   // Punching
-  cocos2d::CCAnimation *rightPunchAnim_;
-  cocos2d::CCAnimation *leftPunchAnim_;
-  cocos2d::CCAnimation *malletPunchAnim_;
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, rightPunchAnim_, RightPunchAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, leftPunchAnim_, LeftPunchAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, malletPunchAnim_, MalletPunchAnim)
 
   // Taking Damage and Death
-  cocos2d::CCAnimation *phaserShockAnim_;
-  cocos2d::CCAnimation *deathAnim_;
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, phaserShockAnim_, PhaserShockAnim)
+  CC_SYNTHESIZE_RETAIN(cocos2d::CCAnimation*, deathAnim_, DeathAnim)
+
   SneakyJoystick *joystick_;
   SneakyButton *jumpButton_;
   SneakyButton *attackButton_;

@@ -32,22 +32,21 @@ bool GameplayLayer::init()
     sceneSpriteBatchNode_ = CCSpriteBatchNode::create("scene1atlasiPhone.png");
   }
 
-  vikingSprite_ = CCSprite::createWithSpriteFrameName("sv_anim_1.png");
-  sceneSpriteBatchNode_->addChild(vikingSprite_);
-  this->addChild(sceneSpriteBatchNode_);
-  
-  vikingSprite_->setPosition(ccp(screenSize_.width/2, screenSize_.height*0.17f));
+  this->addChild(sceneSpriteBatchNode_, 0);
 
-  // If NOT on the iPad, scale down
-  if (screenSize_.width == 480) {
-    // FIXME: this doesn't seem quite correct...
-    vikingSprite_->setScaleX(480 / 1024.0f);
-    vikingSprite_->setScaleY(320 / 768.0f);
-  }
+  this->initJoystickAndButtons();
+  
+  Viking *viking = Viking::create();
+  viking->setJoystick(leftJoystick_);
+  viking->setJumpButton(jumpButton_);
+  viking->setAttackButton(attackButton_);
+  viking->setPosition(ccp(screenSize_.width * 0.35f, screenSize_.height * 0.14f));
+  viking->setCharacterHealth(100);
+
+  sceneSpriteBatchNode_->addChild(viking, kVikingSpriteZValue, kVikingSpriteTagValue);
 
   this->createObject(kEnemyTypeRadarDish, 100, ccp(screenSize_.width * 0.878f, screenSize_.height * 0.13f), 10);
   
-  this->initJoystickAndButtons();
   this->scheduleUpdate();
 
   return true;
@@ -129,16 +128,11 @@ void GameplayLayer::createPhaser(PhaserDirection phaserDirection, CCPoint spawnP
   return;
 }
 
-#define SET_BOUND_INSIDE(x, min, max) x = (x < min ? min : (x > max ? max : x))
-
 void GameplayLayer::applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, float deltaTime)
 {
   CCPoint scaledVelocity = ccpMult(aJoystick->getVelocity(), screenSize_.width);
   CCPoint newPosition = ccp(toNode->getPosition().x + scaledVelocity.x * deltaTime,
                             toNode->getPosition().y + scaledVelocity.y * deltaTime);
-
-  SET_BOUND_INSIDE(newPosition.x, 0, screenSize_.width);
-  SET_BOUND_INSIDE(newPosition.y, 0, screenSize_.height);
 
   toNode->setPosition(newPosition);
 
@@ -156,10 +150,8 @@ void GameplayLayer::update(float deltaTime)
 
   for (int i = 0; i < gameObjects->count(); i++) {
     GameCharacter *tempChar = (GameCharacter *)gameObjects->objectAtIndex(i);
-    tempChar->updateState(deltaTime, *gameObjects);
+    tempChar->updateState(deltaTime, gameObjects);
   }
-
-  this->applyJoystick(leftJoystick_, vikingSprite_, deltaTime);
 }
 
 

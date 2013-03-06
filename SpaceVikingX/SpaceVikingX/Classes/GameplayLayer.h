@@ -19,6 +19,7 @@
 #include "Constants.h"
 #include "CommonProtocols.h"
 #include "RadarDish.h"
+#include "Viking.h"
 
 class GameplayLayer : public cocos2d::CCLayer
 {
@@ -33,7 +34,6 @@ private:
   void applyJoystick(SneakyJoystick *aJoystick, CCNode *toNode, float deltaTime);
   void createObject(GameObjectType objectType, int initialHealth, cocos2d::CCPoint spawnLocation, int zValue);
   void createPhaser(PhaserDirection phaserDirection, cocos2d::CCPoint spawnPosition);
-  cocos2d::CCSprite *vikingSprite_;
   cocos2d::CCSize screenSize_;
   cocos2d::CCSpriteBatchNode *sceneSpriteBatchNode_;
 
